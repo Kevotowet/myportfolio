@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Custom Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0f172a',      /* Slate 900 */
+                            surface: '#1e293b', /* Slate 800 */
+                            accent: '#38bdf8',  /* Sky 400 */
+                            text: '#f8fafc',    /* Slate 50 */
+                            muted: '#94a3b8'    /* Slate 400 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-accent selection:text-brand-bg">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg/80 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-mono text-xl font-bold text-brand-accent">
+                    <span class="text-slate-500">&lt;</span>dev<span class="text-slate-500">/&gt;</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
+                        <a href="#about" class="hover:text-brand-accent transition-colors">01. About</a>
+                        <a href="#skills" class="hover:text-brand-accent transition-colors">02. Skills</a>
+                        <a href="#projects" class="hover:text-brand-accent transition-colors">03. Projects</a>
+                        <a href="#contact" class="hover:text-brand-accent transition-colors border border-brand-accent px-4 py-1.5 rounded hover:bg-brand-accent/10">04. Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-brand-muted hover:text-brand-text focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-b border-slate-800 px-4 pt-2 pb-4 space-y-3 font-mono text-sm">
+            <a href="#about" class="block hover:text-brand-accent py-2">01. About</a>
+            <a href="#skills" class="block hover:text-brand-accent py-2">02. Skills</a>
+            <a href="#projects" class="block hover:text-brand-accent py-2">03. Projects</a>
+            <a href="#contact" class="block text-brand-accent py-2">04. Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Terminal Style) -->
+    <header id="about" class="max-w-4xl mx-auto px-4 pt-20 pb-16 md:py-32 flex flex-col justify-center min-h-[calc(100vh-4rem)]">
+        <p class="font-mono text-brand-accent mb-4">Hi, my name is Mr Fix It</p>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4 text-slate-100">
+            Mr Fix It.
+        </h1>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-brand-muted mb-6">
+            I build performance-driven software.
+        </h2>
+        <p class="text-base sm:text-lg text-brand-muted max-w-xl mb-12 leading-relaxed">
+            I am a software developer specializing in building clean web interfaces, optimizing backend architectures, and working efficiently within modern environments. Focused on writing secure, maintainable code.
+        </p>
+
+        <!-- Mock Terminal Window -->
+        <div class="w-full bg-brand-surface rounded-lg shadow-2xl border border-slate-700 font-mono text-sm text-left overflow-hidden">
+            <div class="bg-slate-900 px-4 py-3 flex items-center space-x-2 border-b border-slate-700">
+                <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                <span class="text-xs text-brand-muted ml-4">bash - guest@dev-portfolio:~</span>
+            </div>
+            <div class="p-6 space-y-2 text-slate-300">
+                <p><span class="text-brand-accent">guest@dev-portfolio:~$</span> cat current_focus.json</p>
+                <p class="text-yellow-400">{</p>
+                <p class="pl-4 text-yellow-400">"role": <span class="text-emerald-400">"Full-Stack Web Development"</span>,</p>
+                <p class="pl-4 text-yellow-400">"environments": <span class="text-emerald-400">["Linux/Ubuntu", "Production Shells"]</span>,</p>
+                <p class="pl-4 text-yellow-400">"interests": <span class="text-emerald-400">["Systems Security", "Static Optimization"]</span></p>
+                <p class="text-yellow-400">}</p>
+                <p><span class="text-brand-accent">guest@dev-portfolio:~$</span> <span class="animate-pulse">▒</span></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32 pb-32">
+
+        <!-- SKILLS MATRIX SECTION -->
+        <section id="skills" class="scroll-mt-24">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-slate-200"><span class="text-brand-accent">01.</span> Tech Toolkit</h2>
+                <div class="h-[1px] bg-slate-700 flex-grow max-w-xs"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Category 1 -->
+                <div class="bg-brand-surface p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-code text-brand-accent text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-100">Frontend Engine</h3>
+                    </div>
+                    <ul class="space-y-2 font-mono text-sm text-brand-muted">
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>HTML5 / Semantic CSS</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Tailwind CSS</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>JavaScript (ES6+)</li>
+                    </ul>
+                </div>
+                <!-- Category 2 -->
+                <div class="bg-brand-surface p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-terminal text-brand-accent text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-100">Backend & Automation</h3>
+                    </div>
+                    <ul class="space-y-2 font-mono text-sm text-brand-muted">
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Node.js / Express</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Shell Scripting (Bash)</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>SQL Databases</li>
+                    </ul>
+                </div>
+                <!-- Category 3 -->
+                <div class="bg-brand-surface p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-gears text-brand-accent text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-100">Systems & Workflows</h3>
+                    </div>
+                    <ul class="space-y-2 font-mono text-sm text-brand-muted">
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Linux Environment Admin</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Git / GitHub Version Control</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-accent mr-2"></i>Deployment Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS CASE-STUDY SECTION -->
+        <section id="projects" class="scroll-mt-24">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-slate-200"><span class="text-brand-accent">02.</span> Projects & Showcase</h2>
+                <div class="h-[1px] bg-slate-700 flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-surface rounded-lg p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-regular fa-folder text-brand-accent text-3xl"></i>
+                            <div class="space-x-4 text-xl text-brand-muted">
+                                <a href="#" class="hover:text-brand-accent transition-colors" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="hover:text-brand-accent transition-colors" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-100 hover:text-brand-accent transition-colors"><a href="#">Automated Network Dashboard</a></h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            Developed a secure diagnostic interface tracking active connections. Optimised for speed, rendering environment metrics into an instant HTML layout while resolving latency bottlenecks in reporting scripts.
+                        </p>
+                    </div>
+                    <div class="font-mono text-xs text-brand-accent/80 flex flex-wrap gap-2">
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">Bash Scripting</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">Tailwind CSS</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">Linux Linux Environment</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-surface rounded-lg p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-regular fa-folder text-brand-accent text-3xl"></i>
+                            <div class="space-x-4 text-xl text-brand-muted">
+                                <a href="#" class="hover:text-brand-accent transition-colors" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="hover:text-brand-accent transition-colors" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-100 hover:text-brand-accent transition-colors"><a href="#">Static Site Engine Boilerplate</a></h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            A production-ready lightweight wrapper leveraging componentized design to render custom static portals cleanly. Built to allow zero configuration deployment across Vercel or GitHub Pages ecosystem instantly.
+                        </p>
+                    </div>
+                    <div class="font-mono text-xs text-brand-accent/80 flex flex-wrap gap-2">
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">HTML5</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">Vanilla JS</span>
+                        <span class="bg-slate-900 px-2.5 py-1 rounded">Vercel Deploy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="scroll-mt-24 max-w-xl mx-auto text-center py-12">
+            <p class="font-mono text-brand-accent text-sm mb-2">03. What's Next?</p>
+            <h2 class="text-3xl font-bold mb-4 text-slate-100">Get In Touch</h2>
+            <p class="text-brand-muted mb-8 text-sm sm:text-base">
+                Whether you want to talk infrastructure, discuss a front-end project layout, or have an opening on your dev team, my inbox is open.
+            </p>
+            <a href="mailto:your.kevintowet2@gmail.com" class="font-mono border-2 border-brand-accent text-brand-accent px-6 py-3 rounded hover:bg-brand-accent/10 transition-colors inline-block tracking-wide">
+                EMAIL
+            </a>
+            <a href="https://wa.me/+254729111040?text=Hi,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project!" class="font-mono border-2 border-brand-accent text-brand-accent px-6 py-3 rounded hover:bg-brand-accent/10 transition-colors inline-block tracking-wide">
+                whatsapp
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 py-6 font-mono text-xs text-center text-brand-muted">
+        <div class="flex justify-center space-x-6 text-lg mb-4 md:hidden">
+            <a href="#" class="hover:text-brand-accent"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="hover:text-brand-accent"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>Designed & Built by Mr Fix It</p>
+        <p class="text-slate-600 mt-1">&copy; 2026. Distributed under the MIT License.</p>
+    </footer>
+
+    <!-- INTERACTION SCRIPT -->
+    <script>
+        // Simple script to handle mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
